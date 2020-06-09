@@ -1,0 +1,34 @@
+spring:
+  profiles: production
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  redis:
+    lettuce.pool.min-idle: 4
+    lettuce.pool.max-active: 20
+    lettuce.pool.max-wait: 5000
+    password: ${REDIS_PASSWORD}
+    cluster:
+      nodes:
+        - redis.redis.svc.cluster.local:6379
+
+server:
+  connection-timeout: 60000
+  session.timeout: 60000
+  port: 8080
+  servlet:
+    context-path: /api
+
+management:
+  security:
+    enabled: false
+  context-path: /api
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true
