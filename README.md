@@ -1,4 +1,4 @@
-#  Spring Boot & Redis
+# ShortnerUrl Service with Spring Boot + Redis
 
 ## 
 
